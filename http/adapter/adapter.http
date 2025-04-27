@@ -14,7 +14,7 @@ GET {{host}}/v1/tokens/authenticated
 Authorization: Bearer {{jwtToken}}
 
 ### Get single contact by id <user/admin>
-GET {{host}}/v1/contacts86f5d7da-496a-4606-a18e-5753e19322a9
+GET {{host}}/v1/contacts/86f5d7da-496a-4606-a18e-5753e19322a9
 Authorization: Bearer {{jwtToken}}
 
 ### Get all contacts <user/admin>
