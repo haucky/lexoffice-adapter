@@ -54,6 +54,7 @@ public class HomeController {
         apiInfo.put("description", "API for managing Lexoffice contacts and related operations");
         apiInfo.put("status", "operational");
         apiInfo.put("documentation", "/api.html");
+        apiInfo.put("authentication", "JWT Bearer Token - Include 'Authorization: Bearer <token>' in request headers");
 
         // Define available resources
         Map<String, Object> resources = new HashMap<>();
@@ -67,6 +68,11 @@ public class HomeController {
         cacheResource.put("href", "/v1/cache");
         cacheResource.put("description", "Cache management operations");
         resources.put("cache", cacheResource);
+
+        Map<String, String> tokensResource = new HashMap<>();
+        tokensResource.put("href", "/v1/tokens");
+        tokensResource.put("description", "JWT token management and authentication operations");
+        resources.put("tokens", tokensResource);
 
         apiInfo.put("resources", resources);
 
