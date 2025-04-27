@@ -1,0 +1,43 @@
+{
+  "version": 0,
+  "roles": {
+    "customer": {}
+  },
+  "company": {
+    "name": "",
+    "vatRegistrationId": "invalid-vat-format",
+    "taxNumber": "ThisTaxNumberIsMuchTooLongToBeValid1234567890123456789012345678901234567890",
+    "contactPersons": [
+      {
+        "salutation": "ThisSalutationIsTooLongAndExceedsTwentyFiveCharacters",
+        "lastName": "",
+        "emailAddress": "not-a-valid-email"
+      }
+    ]
+  },
+  "addresses": {
+    "billing": [
+      {
+        "countryCode": "DEU",
+        "supplement": "ThisSupplementIsReallyReallyReallyReallyReallyReallyReallyReallyReallyReallyReallyReallyReallyReallyReallyReallyReallyReallyReallyLong"
+      }
+    ],
+    "shipping": [
+      {
+        "countryCode": "lowercase"
+      }
+    ]
+  },
+  "emailAddresses": {
+    "business": [ "not.valid.email@" ],
+    "office": [ "another-invalid-email" ],
+    "private": [ "not@valid" ],
+    "other": [ "notvalid" ]
+  },
+  "phoneNumbers": {
+    "business": [
+      "ThisPhoneNumberIsMuchTooLongToBeValid1234567890123456789012345678901234567890"
+    ]
+  },
+  "note": "This note is extremely long and will exceed the maximum length allowed for notes. This note is extremely long and will exceed the maximum length allowed for notes. This note is extremely long and will exceed the maximum length allowed for notes. This note is extremely long and will exceed the maximum length allowed for notes. This note is extremely long and will exceed the maximum length allowed for notes. This note is extremely long and will exceed the maximum length allowed for notes. This note is extremely long and will exceed the maximum length allowed for notes. This note is extremely long and will exceed the maximum length allowed for notes. This note is extremely long and will exceed the maximum length allowed for notes. This note is extremely long and will exceed the maximum length allowed for notes. This note is extremely long and will exceed the maximum length allowed for notes. This note is extremely long and will exceed the maximum length allowed for notes. This note is extremely long and will exceed the maximum length allowed for notes. This note,"
+}

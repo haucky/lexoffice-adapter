@@ -1,0 +1,11 @@
+{
+  "version": 0,
+  "roles": {
+    "customer": {}
+  },
+  "company": {
+    "name": "Acme Corporation",
+    "extraField": "This should not be allowed"
+  },
+  "unknownProperty": "This should cause validation to fail"
+}

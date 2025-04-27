@@ -1,0 +1,83 @@
+### GET single contact
+GET https://api.lexoffice.io/v1/contacts/b1a4eb84-ac82-4f4d-840b-73fe1bf5e654
+Authorization: Bearer {{token}}
+Accept: application/json
+Content-Type: application/json
+
+### GET all contacts
+GET https://api.lexoffice.io/v1/contacts
+Authorization: Bearer {{token}}
+Accept: application/json
+Content-Type: application/json
+
+### GET all countries
+GET https://api.lexoffice.io/v1/countries
+Authorization: Bearer {{token}}
+Accept: application/json
+Content-Type: application/json
+
+### Create contact
+POST https://api.lexoffice.io/v1/contacts
+Authorization: Bearer {{token}}
+Accept: application/json
+Content-Type: application/json
+
+{
+  "version": 0,
+  "roles": {
+    "customer": {}
+  },
+  "company": {
+    "name": "Acme Corporation",
+    "taxNumber": "DE123456789",
+    "vatRegistrationId": "DE987654321",
+    "allowTaxFreeInvoices": false,
+    "contactPersons": [
+      {
+        "salutation": "Mr",
+        "firstName": "John",
+        "lastName": "Doe",
+        "primary": true,
+        "emailAddress": "john.doe@acme.com",
+        "phoneNumber": "+49 123 456789"
+      }
+    ]
+  },
+  "addresses": {
+    "billing": [
+      {
+        "street": "Main Street 123",
+        "zip": "12345",
+        "city": "Berlin",
+        "countryCode": "DE"
+      }
+    ],
+    "shipping": [
+      {
+        "supplement": "Building A",
+        "street": "Second Street 456",
+        "zip": "54321",
+        "city": "Munich",
+        "countryCode": "DE"
+      }
+    ]
+  },
+  "emailAddresses": {
+    "business": [
+      "info@acme.com"
+    ],
+    "office": [
+      "office@acme.com"
+    ]
+  },
+  "phoneNumbers": {
+    "business": [
+      "+49 123 456789"
+    ],
+    "fax": [
+      "+49 123 456780"
+    ]
+  },
+  "note": "Important customer - premium service"
+}
+

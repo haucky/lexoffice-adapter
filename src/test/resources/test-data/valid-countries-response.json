@@ -1,0 +1,20 @@
+[
+  {
+    "countryCode": "DE",
+    "countryNameDE": "Deutschland",
+    "countryNameEN": "Germany",
+    "taxClassification": "de"
+  },
+  {
+    "countryCode": "FR",
+    "countryNameDE": "Frankreich",
+    "countryNameEN": "France",
+    "taxClassification": "intraCommunity"
+  },
+  {
+    "countryCode": "US",
+    "countryNameDE": "Vereinigte Staaten von Amerika",
+    "countryNameEN": "United States",
+    "taxClassification": "thirdPartyCountry"
+  }
+]

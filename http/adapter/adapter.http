@@ -1,0 +1,141 @@
+### Variables
+@jwtToken = PUT_HERE_YOUR_TOKEN_GENERATED_BELOW
+
+
+### Get token <admin>
+### Acts like authorization server, this of course not prod-ready. No authentication required, could be done with basic-auth for example
+GET {{host}}/v1/tokens/admin
+
+### Get token <user>
+GET {{host}}/v1/tokens/user
+
+### Check if token is valid <user/admin>
+GET {{host}}/v1/tokens/authenticated
+Authorization: Bearer {{jwtToken}}
+
+### Get single contact by id <user/admin>
+GET {{host}}/v1/contacts86f5d7da-496a-4606-a18e-5753e19322a9
+Authorization: Bearer {{jwtToken}}
+
+### Get all contacts <user/admin>
+GET {{host}}/v1/contacts
+Authorization: Bearer {{jwtToken}}
+
+### Get api docs <public>
+GET {{host}}/v1/api-docs
+
+### Get swagger UI <public>
+GET {{host}}/api.html
+
+### Get general API information <public>
+GET {{host}}/
+
+### Invalidate countries cache <admin>
+POST {{host}}/v1/cache/countries/invalidate
+Authorization: Bearer {{jwtToken}}
+
+### Retrieve basic metrics
+GET {{host}}/actuator/metrics/outbound.lexoffice.contacts.getById
+Authorization: Bearer {{jwtToken}}
+
+### Get all contacts with multiple invalid parameters <user/admin>
+GET {{host}}/v1/contacts?page=-1&size=0&customer=maybe&email=invalid-email
+Accept: application/json
+Authorization: Bearer {{jwtToken}}
+
+### Get all contacts paged and filtered <user/admin>
+GET {{host}}/v1/contacts?page=0&size=5&customer=true&email=me@haucky.com
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{jwtToken}}
+
+### Create a new contact <user/admin>
+POST {{host}}/v1/contacts
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{jwtToken}}
+
+{
+  "version": 0,
+  "roles": {
+    "customer": {
+      "number": 10307
+    }
+  },
+  "company": {
+    "name": "Acme Corporation",
+    "taxNumber": "DE123456789",
+    "vatRegistrationId": "DE987654321",
+    "allowTaxFreeInvoices": false,
+    "contactPersons": [
+      {
+        "salutation": "Mr",
+        "firstName": "John",
+        "lastName": "Doe",
+        "primary": true,
+        "emailAddress": "me@haucky.com",
+        "phoneNumber": "+49 123 456789"
+      }
+    ]
+  },
+  "addresses": {
+    "billing": [
+      {
+        "street": "Main Street 123",
+        "zip": "12345",
+        "city": "Berlin",
+        "countryCode": "DE"
+      }
+    ],
+    "shipping": [
+      {
+        "supplement": "Building A",
+        "street": "Second Street 456",
+        "zip": "54321",
+        "city": "Munich",
+        "countryCode": "DE"
+      }
+    ]
+  },
+  "emailAddresses": {
+    "business": [
+      "me@haucky.com"
+    ],
+    "office": [
+      "office@acme.com"
+    ]
+  },
+  "phoneNumbers": {
+    "business": [
+      "+49 123 456789"
+    ],
+    "fax": [
+      "+49 123 456780"
+    ]
+  },
+  "note": "Important customer - premium service"
+}
+
+### Get end-to-end request latency for GET single contact by id
+GET {{host}}/actuator/metrics/http.server.requests?tag=uri:%2Fv1%2Fcontacts%2F%7Bid%7D
+Authorization: Bearer {{jwtToken}}
+
+### Get end-to-end request latency for GET all contacts
+GET {{host}}/actuator/metrics/http.server.requests?tag=uri:/v1/contacts
+Authorization: Bearer {{jwtToken}}
+
+### Get end-to-end request latency for POST single contact
+GET {{host}}/actuator/metrics/http.server.requests?tag=uri:/v1/contacts&tag=method:POST
+Authorization: Bearer {{jwtToken}}
+
+### Get outbound call latency for creating contact
+GET {{host}}/actuator/metrics/outbound.lexoffice.contacts.create
+Authorization: Bearer {{jwtToken}}
+
+### Get outbound call latency for getting contact by ID
+GET {{host}}/actuator/metrics/outbound.lexoffice.contacts.getById
+Authorization: Bearer {{jwtToken}}
+
+### Get outbound call latency for getting all contacts
+GET {{host}}/actuator/metrics/outbound.lexoffice.contacts.getAll
+Authorization: Bearer {{jwtToken}}

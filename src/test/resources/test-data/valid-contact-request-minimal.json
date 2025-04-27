@@ -1,0 +1,9 @@
+{
+  "version": 0,
+  "roles": {
+    "customer": {}
+  },
+  "company": {
+    "name": "Acme Corporation"
+  }
+}

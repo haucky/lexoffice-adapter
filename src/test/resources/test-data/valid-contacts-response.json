@@ -1,0 +1,160 @@
+{
+  "content": [
+    {
+      "id": "946a7d88-0066-49b7-80aa-977c0e7539cc",
+      "organizationId": "93faab61-2e43-4061-9b96-e2ab4fa79f38",
+      "version": 1,
+      "roles": {
+        "customer": {
+          "number": 10001
+        }
+      },
+      "company": {
+        "name": "Acme Corporation",
+        "taxNumber": "DE123456789",
+        "vatRegistrationId": "DE987654321",
+        "allowTaxFreeInvoices": false,
+        "contactPersons": [
+          {
+            "salutation": "Mr",
+            "firstName": "John",
+            "lastName": "Doe",
+            "primary": true,
+            "emailAddress": "john.doe@acme.com",
+            "phoneNumber": "+49 123 456789"
+          }
+        ]
+      },
+      "addresses": {
+        "billing": [
+          {
+            "street": "Main Street 123",
+            "zip": "12345",
+            "city": "Berlin",
+            "countryCode": "DE"
+          }
+        ],
+        "shipping": [
+          {
+            "supplement": "Building A",
+            "street": "Second Street 456",
+            "zip": "54321",
+            "city": "Munich",
+            "countryCode": "DE"
+          }
+        ]
+      },
+      "emailAddresses": {
+        "business": [
+          "info@acme.com"
+        ],
+        "office": [
+          "office@acme.com"
+        ]
+      },
+      "phoneNumbers": {
+        "business": [
+          "+49 123 456789"
+        ],
+        "fax": [
+          "+49 123 456780"
+        ]
+      },
+      "note": "Important customer - premium service",
+      "archived": false
+    },
+    {
+      "id": "226c620c-be4d-4ba6-a164-06f6b4a72c2a",
+      "organizationId": "93faab61-2e43-4061-9b96-e2ab4fa79f38",
+      "version": 1,
+      "roles": {
+        "customer": {
+          "number": 10002
+        }
+      },
+      "company": {
+        "name": "Acme Corporation",
+        "taxNumber": "DE123456789",
+        "vatRegistrationId": "DE987654321",
+        "allowTaxFreeInvoices": false,
+        "contactPersons": [
+          {
+            "salutation": "Mr",
+            "firstName": "John",
+            "lastName": "Doe",
+            "primary": true,
+            "emailAddress": "john.doe@acme.com",
+            "phoneNumber": "+49 123 456789"
+          }
+        ]
+      },
+      "addresses": {
+        "billing": [
+          {
+            "street": "Main Street 123",
+            "zip": "12345",
+            "city": "Berlin",
+            "countryCode": "DE"
+          }
+        ],
+        "shipping": [
+          {
+            "supplement": "Building A",
+            "street": "Second Street 456",
+            "zip": "54321",
+            "city": "Munich",
+            "countryCode": "DE"
+          }
+        ]
+      },
+      "emailAddresses": {
+        "business": [
+          "info@acme.com"
+        ],
+        "office": [
+          "office@acme.com"
+        ]
+      },
+      "phoneNumbers": {
+        "business": [
+          "+49 123 456789"
+        ],
+        "fax": [
+          "+49 123 456780"
+        ]
+      },
+      "note": "Important customer - premium service",
+      "archived": false
+    }
+  ],
+  "first": true,
+  "last": true,
+  "totalPages": 1,
+  "totalElements": 2,
+  "numberOfElements": 2,
+  "size": 25,
+  "number": 0,
+  "sort": [
+    {
+      "property": "name",
+      "direction": "ASC",
+      "ignoreCase": false,
+      "nullHandling": "NATIVE",
+      "ascending": true
+    },
+    {
+      "property": "lastModifiedDate",
+      "direction": "ASC",
+      "ignoreCase": false,
+      "nullHandling": "NATIVE",
+      "ascending": true
+    },
+    {
+      "property": "contactId",
+      "direction": "ASC",
+      "ignoreCase": false,
+      "nullHandling": "NATIVE",
+      "ascending": true
+    }
+  ]
+}

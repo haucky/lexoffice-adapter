@@ -1,0 +1,47 @@
+{
+  "id": "e9066f04-8cc7-4616-93f8-ac9ecc8479c8",
+  "organizationId": "aa93e8a8-2aa3-470b-b914-caad8a255dd8",
+  "version": 0,
+  "roles": {
+    "customer": {
+      "number": 10308
+    }
+  },
+  "company": {
+    "name": "Acme Corporation",
+    "taxNumber": "DE123456789",
+    "vatRegistrationId": "DE987654321",
+    "allowTaxFreeInvoices": false,
+    "contactPersons": [
+      {
+        "salutation": "Mr",
+        "firstName": "John",
+        "lastName": "Doe",
+        "primary": true,
+        "emailAddress": "john.doe@acme.com",
+        "phoneNumber": "+49 123 456789"
+      }
+    ]
+  },
+  "addresses": {
+    "billing": [
+      {
+        "street": "Main Street 123",
+        "zip": "12345",
+        "city": "Berlin",
+        "countryCode": "DE"
+      }
+    ],
+    "shipping": [
+      {
+        "supplement": "Building A",
+        "street": "Second Street 456",
+        "zip": "54321",
+        "city": "Munich",
+        "countryCode": "DE"
+      }
+    ]
+  },
+  "note": "Notizen",
+  "archived": false
+}
