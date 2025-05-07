@@ -1,7 +1,6 @@
 package com.haucky.lexofficeadapter.adapter.config;
 
 import com.haucky.lexofficeadapter.adapter.security.JwtAuthenticationFilter;
-import com.haucky.lexofficeadapter.adapter.security.JwtScopeAuthenticationConverter;
 import com.haucky.lexofficeadapter.adapter.security.JwtUtil;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.context.annotation.Bean;
@@ -11,7 +10,6 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationConverter;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
@@ -47,11 +45,6 @@ public class JwtSecurityConfig {
     @Bean
     public SecretKey jwtSecretKey() {
         return Keys.hmacShaKeyFor(jwtUtil().getJwtSecret().getBytes(StandardCharsets.UTF_8));
-    }
-
-    @Bean
-    public JwtAuthenticationConverter jwtAuthenticationConverter() {
-        return new JwtScopeAuthenticationConverter();
     }
 
     @Bean
