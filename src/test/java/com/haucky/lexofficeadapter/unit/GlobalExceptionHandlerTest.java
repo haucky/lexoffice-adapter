@@ -93,7 +93,7 @@ public class GlobalExceptionHandlerTest {
 
         // Assert
         assertThat(response).isNotNull();
-        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.BAD_REQUEST);
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.UNPROCESSABLE_ENTITY);
         assertThat(response.getBody()).isInstanceOf(ValidationProblem.class);
 
         ValidationProblem problem = (ValidationProblem) response.getBody();

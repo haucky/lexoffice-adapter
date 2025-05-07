@@ -73,7 +73,7 @@ public class GlobalExceptionHandler {
             ValidationProblem problem = ValidationProblem.builder()
                     .type(ADAPTER_ERROR_DOCS)
                     .title("Validation Error")
-                    .status(HttpStatus.BAD_REQUEST)
+                    .status(HttpStatus.UNPROCESSABLE_ENTITY)
                     .detail("Unknown field in request: '" + propertyName + "' in " + className)
                     .instance(constructInstanceUri(request))
                     .build();

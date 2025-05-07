@@ -107,11 +107,11 @@ public class ContactControllerTest {
             mockMvc.perform(post("/v1/contacts")
                             .contentType(MediaType.APPLICATION_JSON)
                             .content(requestBody))
-                    .andDo(print()) // Print the response for debugging
-                    .andExpect(status().isBadRequest())
+                    .andDo(print())
+                    .andExpect(status().isUnprocessableEntity())
                     .andExpect(jsonPath("$.type", is(ADAPTER_ERROR_DOCS.toString())))
                     .andExpect(jsonPath("$.title", is("Validation Error")))
-                    .andExpect(jsonPath("$.status", is(400)))
+                    .andExpect(jsonPath("$.status", is(422)))
                     .andExpect(jsonPath("$.detail", is("Unknown field in request: 'extraField' in Company")))
                     .andExpect(jsonPath("$.instance").exists());
         }
