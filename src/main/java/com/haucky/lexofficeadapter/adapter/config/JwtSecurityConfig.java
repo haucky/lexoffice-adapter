@@ -24,19 +24,12 @@ public class JwtSecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        // Create and configure the JwtAuthenticationFilter
         JwtAuthenticationFilter jwtFilter = new JwtAuthenticationFilter(jwtSecretKey());
-        /*
-            Document jwt token in openapi
-            remove legacy calls below
-            add some very basic monitoring
-         */
 
         http
                 .csrf(AbstractHttpConfigurer::disable)
                 .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authorize -> authorize
-                        // Allow access to token generation endpoint without authentication
                         .requestMatchers("/v1/tokens/admin", "v1/tokens/user").permitAll()
                         .requestMatchers("/v1/cache/**").hasAuthority("SCOPE_admin")
                         .requestMatchers("/", "/v1/api-docs/**", "/api.html", "/swagger-ui/**").permitAll()
@@ -44,7 +37,6 @@ public class JwtSecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/v1/contacts/**").hasAuthority("SCOPE_data:write")
                         .requestMatchers("/actuator/**").hasAuthority("SCOPE_admin")
 
-                        // Authenticate all other requests
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
