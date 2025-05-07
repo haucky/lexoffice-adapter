@@ -37,7 +37,7 @@ public class JwtSecurityConfig {
                 .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authorize -> authorize
                         // Allow access to token generation endpoint without authentication
-                        .requestMatchers("/v1/tokens/**").permitAll()
+                        .requestMatchers("/v1/tokens/admin", "v1/tokens/user").permitAll()
                         .requestMatchers("/v1/cache/**").hasAuthority("SCOPE_admin")
                         .requestMatchers("/", "/v1/api-docs/**", "/api.html", "/swagger-ui/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/v1/contacts/**").hasAuthority("SCOPE_data:read")
